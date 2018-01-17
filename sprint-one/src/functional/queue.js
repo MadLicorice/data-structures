@@ -8,7 +8,7 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     len += 1;
-    someInstance[Number(len - 1)] = value;
+    storage[Number(len - 1)] = value;
   };
 
   someInstance.dequeue = function() {
@@ -16,7 +16,7 @@ var Queue = function() {
     if (len !== 0) {
       len -= 1;
     }
-    var popValue = someInstance[0]
+    var popValue = storage[0];
     delete someInstance[0];
     return popValue;
   };
