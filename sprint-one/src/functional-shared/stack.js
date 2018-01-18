@@ -14,30 +14,32 @@ var Stack = function() {
 
   someInstance.count = 0;
 
-  _.extend(someInstance, Stack.stackMethods);
+  _.extend(someInstance, stackMethods);
 
   return someInstance;
 };
 
 
 
-Stack.stackMethods = {};
+stackMethods = {
 
-Stack.stackMethods.push = function(value) {
-  this.storage[Number(this.count)] = value;
-  this.count += 1;
-};
+  push: function(value) {
+    this.storage[Number(this.count)] = value;
+    this.count += 1;
+  },
 
-Stack.stackMethods.pop = function() {
-  var popValue = this.storage[Number((this.count - 1))];
-  if (this.count !== 0) {
-    delete this.storage[Number((this.count - 1))];
-    this.count -= 1;
+  pop: function() {
+    var popValue = this.storage[Number((this.count - 1))];
+    if (this.count !== 0) {
+      delete this.storage[Number((this.count - 1))];
+      this.count -= 1;
+    }
+    return popValue;
+
+  },
+
+  size: function () {
+    return this.count;
   }
-  return popValue;
 
-};
-
-Stack.stackMethods.size = function () {
-  return this.count;
 };
