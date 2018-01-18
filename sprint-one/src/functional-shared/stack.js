@@ -6,8 +6,6 @@
 //   }
 // };
 
-
-
 var Stack = function() {
   var someInstance = {};
   someInstance.storage = {};
@@ -22,7 +20,6 @@ var Stack = function() {
 
 
 stackMethods = {
-
   push: function(value) {
     this.storage[Number(this.count)] = value;
     this.count += 1;
@@ -41,5 +38,4 @@ stackMethods = {
   size: function () {
     return this.count;
   }
-
 };
