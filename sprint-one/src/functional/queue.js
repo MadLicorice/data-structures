@@ -4,20 +4,24 @@ var Queue = function() {
   // Use an object with numeric keys to store values
   var storage = {};
   var len = 0;
+  var first = 0;
+  var last = 0;
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
+    last += 1;
     len += 1;
-    storage[Number(len - 1)] = value;
+    storage[Number(last - 1)] = value;
+    
   };
 
   someInstance.dequeue = function() {
-    debugger;
     if (len !== 0) {
       len -= 1;
     }
-    var popValue = storage[0];
-    delete someInstance[0];
+    var popValue = storage[Number(first)];
+    delete storage[Number(first)];
+    first += 1;
     return popValue;
   };
 

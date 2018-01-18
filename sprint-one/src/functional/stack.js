@@ -9,7 +9,6 @@ var Stack = function() {
   // Implement the methods below
   
   someInstance.push = function(value) {
-    // debugger;
     count += 1;
     return storage[Number(count - 1)] = value;
   };
